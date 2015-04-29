@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>VIV: Visual Information Vases</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/css/foundation.css"/>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/css/normalize.min.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="style/style.css"/>
+    <link rel="stylesheet" type="text/css" href="style/dropzone.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,500italic,700,700italic,900,900italic,100,100italic'
+          rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto+Condensed:300italic,400italic,700italic,400,300,700'
+          rel='stylesheet' type='text/css'>
+    <style>
+        .slick-prev:before, .slick-next:before {
+            color: #AAAAAA;
+        }
+    </style>
+
+</head>
+<body>
+<header>
+    <nav class="top-bar" data-topbar role="navigation">
+        <ul class="title-area">
+            <li class="name">
+                <h1><a href="index.html">Viv</a></h1>
+            </li>
+            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+        </ul>
+
+        <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li><a href="about.html">ABOUT</a></li>
+                <li><a href="contact.html">CONTACT US</a></li>
+            </ul>
+        </section>
+    </nav>
+</header>
+<script>
+    function uploadImage(input) {
+        console.error("uploading image");
+        console.error(input);
+    };
+</script>
+<div id="main">
+    <div class="row">
+        <div class="small-12 medium-5 large-5 columns">
+            <h2>Inspire me with your own image</h2>
+
+            <form action="#"
+                  class="dropzone"
+                  id="my-dropzone">Drag or click here to upload your image.
+            </form>
+        </div>
+        <div class="small-12 medium-6 large-6 columns">
+            <h2>Or try one of these</h2>
+
+            <div class="one-time">
+                <!--<div><option data-img-src="./assets/img/sample1.jpg" alt="slide 1" value="1"></div>
+                <div><option data-img-src="./assets/img/sample2.jpg" alt="slide 2" value="2"></div>
+                <div><option data-img-src="./assets/img/sample3.jpg" alt="slide 3" value="3"></div>
+                <div><option data-img-src="./assets/img/sample4.jpg" alt="slide 4" value="4"></div>
+                <div><option data-img-src="./assets/img/sample5.jpg" alt="slide 5" value="5"></div>
+                <div><option data-img-src="./assets/img/sample6.jpg" alt="slide 6" value="6"></div>
+                <div><option data-img-src="./assets/img/sample7.jpg" alt="slide 7" value="7"></div>
+                <div><option data-img-src="./assets/img/sample8.jpg" alt="slide 8" value="8"></div>-->
+                <div><img src="./assets/img/sample1.jpg" alt="slide 1"/></div>
+                <div><img src="./assets/img/sample2.jpg" alt="slide 2"/></div>
+                <div><img src="./assets/img/sample3.jpg" alt="slide 3"/></div>
+                <div><img src="./assets/img/sample4.jpg" alt="slide 4"/></div>
+                <div><img src="./assets/img/sample5.jpg" alt="slide 5"/></div>
+                <div><img src="./assets/img/sample6.jpg" alt="slide 6"/></div>
+                <div><img src="./assets/img/sample7.jpg" alt="slide 7"/></div>
+                <div><img src="./assets/img/sample8.jpg" alt="slide 8"/></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row collapse">
+        <div class="small-6 columns">
+            <div class="small-3 columns">
+                <button type="button" class="button tiny postfix" id="chooseUser">Choose &gt;&gt;</button>
+            </div>
+        </div>
+        <div class="small-6 columns">
+            <div class="small-3 columns">
+                <button type="button" class="button tiny postfix" id="choosePredef">Choose &gt;&gt;</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+<script type="text/javascript" src="js/dropzone.js"></script>
+<script type="text/javascript">
+    $('.one-time').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: true,
+        arrows: true,
+        onInit: function(){
+            $('.current').text('1');
+            $("#choosePredef").click(function () {
+                console.error($('.one-time').slickCurrentSlide()+1);
+                forwardPredef($('.one-time').slickCurrentSlide()+1);
+            });
+        },
+        onAfterChange: function(){
+            $('.current').text($('.one-time').slickCurrentSlide()+1);
+        }
+    });
+</script>
+
+<script>
+    var uploadedImage;
+    Dropzone.options.myDropzone = { // Make the whole body a dropzone
+        //previewsContainer: "#previews", // Define the container to display the previews
+        //clickable: "#clickable", // Define the element that should be used as click trigger to select files.
+        acceptedFiles: "image/*",
+	thumbnailWidth: 200,
+	thumbnailHeight: 200,
+        init: function () {
+            var myDrop = this;
+            $("#chooseUser").click(function () {
+               if (myDrop.files && myDrop.files[0]) {
+                   console.error("inside if");
+                   var reader = new FileReader();
+                   reader.onload = function (e) {
+ 
+                      //Sets the Old Image to new New Image
+                      $('#photo-id').attr('src', e.target.result);
+ 
+                      //Create a canvas and draw image on Client Side to get the byte[] equivalent
+                      var canvas = document.createElement("canvas");
+                      var imageElement = document.createElement("img");
+ 
+                      imageElement.setAttribute('src', e.target.result);
+                      canvas.width = imageElement.width;
+                      canvas.height = imageElement.height;
+                      var context = canvas.getContext("2d");
+                      context.drawImage(imageElement, 0, 0);
+                      uploadedImage = canvas.toDataURL("image/jpeg");
+ 
+                      //Removes the Data Type Prefix 
+                      //And set the view model to the new value
+                      uploadedImage = uploadedImage.replace(/data:image\/jpeg;base64,/g, '');
+                      forwardImage(uploadedImage);
+                      //console.error(uploadedImage);
+                    }
+                
+                    //Renders Image on Page
+                    reader.readAsDataURL(myDrop.files[0]);
+                }
+            });
+        },
+        success: function(file) {
+            console.error("custom success");
+            if (file.previewElement) {
+                return file.previewElement.classList.add("dz-success");
+            }
+        }
+    };
+</script>
+<script type="text/javascript">
+function forwardImage(img) {
+    console.error("sending image to server");
+
+    var postFormStr = "<form method='POST' action='/inspire.php'>\n";
+
+    postFormStr += "<input type='hidden' name='img_data' value='" + img + "'></input>";
+
+    postFormStr += "</form>";
+
+    var formElement = $(postFormStr);
+
+    $('body').append(formElement);
+    $(formElement).submit();
+};
+
+function forwardPredef(sampleid) {
+    console.error("sending image to server");
+
+    var postFormStr = "<form method='POST' action='/inspire.php'>\n";
+
+    postFormStr += "<input type='hidden' name='chosen_pic' value='" + sampleid + "'></input>";
+
+    postFormStr += "</form>";
+
+    var formElement = $(postFormStr);
+
+    $('body').append(formElement);
+    $(formElement).submit();
+};
+
+function getChosenPic(slideindex) {
+    console.error("Inside Chosen pic");
+    console.error(slideindex);
+};
+</script>
+</body>
+</html>
