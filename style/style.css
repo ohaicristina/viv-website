@@ -71,75 +71,15 @@ body {
 }
 
 #main {
-  padding-top: 2em;
+  padding: 1em 0 4em;
   width: 100%;
   position: relative;
 }
 
-.left {
-  width: 50%;
-  float: left;
+#main h1 {
+  font-size: 1.8em;
 }
 
-.right {
-  width: 50%;
-  float: right;
-}
-
-footer {
-  position: fixed;
-  width: 100%;
-  bottom: 0;
-  padding: 1em;
-}
-
-footer ul {
-  margin-bottom: 0;
-  line-height: 1em;
-}
-
-footer h3 {
-  font-size: 1em;
-}
-
-.footer-item {
-  display: inline-block;
-  padding: 0 1em;
-}
-
-nav.navigation {
-  width: 100%;
-  max-width: 70em;
-}
-
-footer a {
-  color: #1C212D;
-  font-weight: 300;
-}
-
-footer a:hover {
-  color: #5086C6;
-}
-
-footer .name a {
-  font-weight: 600;
-  text-transform: uppercase;
-}
-
-.nu-logo {
-  width: 200px;
-  padding-top: 0.2em;
-}
-
-
-nav.navigation {
-  border-top: 1px solid #ccc;
-  padding: 0.5em 1em;
-  width: 100%;
-  max-width: 70em;
-  position: relative;
-  margin: 0 auto;
-}
 
 button.button {
   background-color: #1C212D;
@@ -323,6 +263,17 @@ img.loading {
   margin: 0 auto 0 auto;
 }
 
+.thumnail-container {
+  padding: 1.5em;
+  border: 2px dashed #dedede;
+}
+
+.thumbnail {
+  width: 12%;
+  padding: 0 0.5em;
+  display: inline-block;
+}
+
 /*-------dropzone image preview---------*/
 .dropzone .dz-preview .dz-details, .dropzone-previews .dz-preview .dz-details {
   width: auto !important;
@@ -347,4 +298,56 @@ img.loading {
 
 .canvas rect {
   opacity: 0;
+}
+
+/*------------footer-----------------*/
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+}
+
+footer ul {
+  margin-bottom: 0;
+  line-height: 1em;
+}
+
+.footer-item {
+  display: inline-block;
+  padding: 0 1em;
+}
+
+
+footer h3 {
+  font-size: 1em;
+}
+
+footer a {
+  color: #1C212D;
+  font-weight: 300;
+}
+
+footer a:hover {
+  color: #5086C6;
+}
+
+footer .name a {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nu-logo {
+  width: 200px;
+  padding-top: 0.2em;
+}
+
+
+nav.navigation {
+  border-top: 1px solid #ccc;
+  padding: 1em 0;
+  width: 100%;
+  max-width: 70em;
+  position: relative;
+  margin: 0 auto;
 }

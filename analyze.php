@@ -38,24 +38,6 @@ if ($result = mysqli_query($_viv_sess_db, $query)) {
           rel="stylesheet" type="text/css">
 </head>
 <body>
-<header>
-    <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-            <li class="name">
-                <h1><a href="index.html">Viv</a></h1>
-            </li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-
-        <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="#">CONTACT US</a></li>
-            </ul>
-        </section>
-    </nav>
-</header>
 <div id="main">
     <a href="upload.html">
         <div class="button" id="previousbutton">&lt;&lt;</div>
@@ -64,7 +46,7 @@ if ($result = mysqli_query($_viv_sess_db, $query)) {
 
     <div class="row">
         <div class="small-12 medium-12 large-12 columns">
-            <h2>I'm performing a color palette analysis...</h2>
+            <h2>I’m performing a color palette analysis on your image…</h2>
         </div>
     </div>
 
@@ -108,7 +90,28 @@ if ($result = mysqli_query($_viv_sess_db, $query)) {
 
     </div>
 </div>
-</div>
+<footer>
+  <nav class="navigation" role="navigation">
+    <div class="row">
+      <div class="small-3 medium-1 columns">
+        <ul class="title-area">
+          <li class="name">
+          <h3><a href="index.html">Viv</a></h3>
+          </li>
+        </ul>
+      </div>
+      <div class="small-9 medium-6 columns">
+        <ul class="footer-nav">
+          <li class="footer-item"><h3><a href="about.html">About</a></h3></li>
+          <li class="footer-item"><h3><a href="contact.html">Contact Us</a></h3></li>
+        </ul>
+      </div>
+      <div class="small-12 medium-3 columns">
+        <img class="nu-logo" src="assets/img/nu_logo.png">
+      </div>
+    </div>
+  </nav>
+</footer>
 
 <script src="js/lib/jquery/jquery-1.11.1.min.js"></script>
 <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>

@@ -36,24 +36,6 @@ if(isset($_POST['chosen_pic'])) {
           rel="stylesheet" type="text/css">
 </head>
 <body>
-<header>
-    <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-            <li class="name">
-                <h1><a href="index.html">Viv</a></h1>
-            </li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-
-        <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="#">CONTACT US</a></li>
-            </ul>
-        </section>
-    </nav>
-</header>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <div id="main" class="row">
     <div>
@@ -63,7 +45,7 @@ if(isset($_POST['chosen_pic'])) {
     </div>
 
     <div class="small-12 medium-12 large-12 columns">
-        <h2>I'm performing a color palette analysis...</h2>
+        <h2>I’m performing a color palette analysis on your image…</h2>
 
         <div class="row">
             <div class="small-6 columns">
@@ -91,7 +73,28 @@ if(isset($_POST['chosen_pic'])) {
         </div>
     </div>
 </div>
-</div>
+<footer>
+  <nav class="navigation" role="navigation">
+    <div class="row">
+      <div class="small-3 medium-1 columns">
+        <ul class="title-area">
+          <li class="name">
+          <h3><a href="index.html">Viv</a></h3>
+          </li>
+        </ul>
+      </div>
+      <div class="small-9 medium-6 columns">
+        <ul class="footer-nav">
+          <li class="footer-item"><h3><a href="about.html">About</a></h3></li>
+          <li class="footer-item"><h3><a href="contact.html">Contact Us</a></h3></li>
+        </ul>
+      </div>
+      <div class="small-12 medium-3 columns">
+        <img class="nu-logo" src="assets/img/nu_logo.png">
+      </div>
+    </div>
+  </nav>
+</footer>
 
 <script type="text/javascript" src="js/bubbles.js"></script>
 <script src="http://cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/js/foundation.min.js"></script>
