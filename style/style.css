@@ -1,12 +1,13 @@
-html, body, h1, h2, h3, p, ul, ol, li, figure {
-  font-family: "Lato", Helvetica, Arial, sans-serif;
-  padding: 0;
-}
-
 html, body {
   background: #fff;
   font-family: "Lato", Helvetica, Arial, sans-serif;
 }
+
+html, body, h1, h2, h3, p, ul, ol, li, figure, button {
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  padding: 0;
+}
+
 
 ul, ol {
   list-style: none;
@@ -69,7 +70,8 @@ body {
   width: 70%;
 }
 
-.main {
+#main {
+  padding-top: 2em;
   width: 100%;
   position: relative;
 }
@@ -84,31 +86,83 @@ body {
   float: right;
 }
 
-#footer {
+footer {
   position: fixed;
-  bottom: 0%;
-  left: 1%;
-  font-size: 0.7em;
+  width: 100%;
+  bottom: 0;
+  padding: 1em;
+}
+
+footer ul {
+  margin-bottom: 0;
+  line-height: 1em;
+}
+
+footer h3 {
+  font-size: 1em;
+}
+
+.footer-item {
+  display: inline-block;
+  padding: 0 1em;
+}
+
+nav.navigation {
+  width: 100%;
+  max-width: 70em;
+}
+
+footer a {
+  color: #1C212D;
+  font-weight: 300;
+}
+
+footer a:hover {
+  color: #5086C6;
+}
+
+footer .name a {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.nu-logo {
+  width: 200px;
+  padding-top: 0.2em;
+}
+
+
+nav.navigation {
+  border-top: 1px solid #ccc;
+  padding: 0.5em 1em;
+  width: 100%;
+  max-width: 70em;
+  position: relative;
+  margin: 0 auto;
 }
 
 button.button {
-  background-color: #333;
+  background-color: #1C212D;
   color: #fff;
   padding: 0.5em 1em;
+  font-family: "Lato", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: .2em;
+  margin-top: 1.5em;
 }
 
-#homebutton {
-  position: relative;
+button.button:hover {
+  background-color: #5086C6
 }
 
-#nextbutton, #previousbutton {
+.nextbutton,
+.previousbutton {
   position: fixed;
   line-height: 10px;
   top: 75%;
-  width: 20px;
   font-size: 1em;
-  font-stretch: condensed;
-  letter-spacing: -0.1em;
+  padding: 1em;
 }
 
 #nextbutton {
@@ -117,18 +171,6 @@ button.button {
 
 #previousbutton {
   left: 0;
-}
-
-.button:hover, :active, .button:hover, :active {
-  background-color: rgb(150, 150, 150);
-  color: whitesmoke;
-  border: none;
-}
-
-.button.secondary:hover, :active, .button:hover, :active {
-  background-color: rgb(150, 150, 150);
-  color: whitesmoke;
-  border: none;
 }
 
 .aside {
@@ -183,26 +225,30 @@ button.button {
 }
 
 #home {
-  position: relative;
+  padding: 3em 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #fff;
+}
+
+#home .row,
+footer .row {
+  max-width: 70em;
 }
 
 
 /*--------fonts-------*/
 p, h1, h2, h3, span, nav {
-  color: rgb(100, 100, 100)
+  color: #333;
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 2.5em;
 }
 
 h2 {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 300;
-  margin: 1.5rem auto;
 }
 
 h2.line2 {
