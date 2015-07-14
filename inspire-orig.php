@@ -36,61 +36,34 @@ if(isset($_POST['chosen_pic'])) {
           rel="stylesheet" type="text/css">
 </head>
 <body>
-<header>
-    <nav class="top-bar" data-topbar role="navigation">
-        <ul class="title-area">
-            <li class="name">
-                <h1><a href="index.html">Viv</a></h1>
-            </li>
-            <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-        </ul>
-
-        <section class="top-bar-section">
-            <!-- Right Nav Section -->
-            <ul class="right">
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="#">CONTACT US</a></li>
-            </ul>
-        </section>
-    </nav>
-</header>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <div id="main" class="row">
-    <div>
-        <a href="upload.html">
-        <button id="previousbutton">&lt;&lt;</button>
-    </a>
-    </div>
-
-    <div class="small-12 medium-12 large-12 columns">
-        <h2>I'm performing a color palette analysis...</h2>
-
-        <div class="row">
-            <div class="small-6 columns">
-                <p class="top">I'm getting inspired by your image's colors to
-                create your vase.</p>
-            </div>
+  <div class="small-12 medium-12 large-12 columns">
+    <h2>I'm performing a color palette analysis...</h2>
+    <div class="row">
+      <div class="small-12 medium-6 large-6 columns">
+        <div class="box" id="uploadedimage">
+            <?php
+                if($selection != -1)
+                {
+                    echo '<img src="./assets/img/sample'.$selection.'.jpg">';
+                } else {
+                    $imgsrc = 'data:image/jpeg;base64,'.$img;
+                    echo '<img src="'.$imgsrc.'" alt="" />';
+                }
+            ?>
         </div>
-
-        <div class="row">
-            <div class="small-12 medium-6 large-6 columns">
-                <div class="box" id="uploadedimage">
-                    <?php
-                        if($selection != -1)
-                        {
-                            echo '<img src="./assets/img/sample'.$selection.'.jpg">';
-                        } else {
-                            $imgsrc = 'data:image/jpeg;base64,'.$img;
-                            echo '<img src="'.$imgsrc.'" alt="" />';
-                        }
-                    ?>
-                </div>
-            </div>
-            <img class="loading" src="./assets/img/loading.gif"/>
-
-        </div>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <img class="loading" src="./assets/img/loading.gif"/>
+      </div>
     </div>
-</div>
+    <div class="row">
+      <a href="upload.html">
+        <button type="button" class="button tiny" id="choosePredef">&#60;&#60; BACK</button>
+      </a>
+    </div>
+  </div>
 </div>
 
 <script type="text/javascript" src="js/bubbles.js"></script>

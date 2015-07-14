@@ -176,6 +176,10 @@ footer .row {
   max-width: 70em;
 }
 
+.ff-container {
+  padding-top: 4.5em;
+}
+
 
 /*--------fonts-------*/
 p, h1, h2, h3, span, nav {

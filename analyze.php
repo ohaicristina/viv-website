@@ -39,27 +39,11 @@ if ($result = mysqli_query($_viv_sess_db, $query)) {
 </head>
 <body>
 <div id="main">
-    <a href="upload.html">
-        <div class="button" id="previousbutton">&lt;&lt;</div>
-    </a>
-    <div class="button" id="nextbutton" onclick="forwardToTweak()">&gt;&gt;</div>
-
     <div class="row">
-        <div class="small-12 medium-12 large-12 columns">
-            <h2>I’m performing a color palette analysis on your image…</h2>
-        </div>
+      <div class="small-12 medium-12 large-12 columns">
+        <h2 class="text-right">...these are the colors that stood out to me.</h2>
+      </div>
     </div>
-
-    <div class="row">
-        <div class="small-12 medium-6 large-6 columns">
-            <p class="top">I'm getting inspired by your image's colors to
-            create your vase.</p>
-        </div>
-        <div class="small-12 medium-6 large-6 columns">
-            <p class="top">These are the colors that stood out to me.</p>
-        </div>
-    </div>
-
     <div class="row">
         <div class="small-12 medium-6 large-6 columns">
             <div class="one-time">
@@ -87,8 +71,14 @@ if ($result = mysqli_query($_viv_sess_db, $query)) {
         <div class="small-12 medium-6 large-6 columns">
             <canvas id="ColorCanvas" height="400" width="800">
         </div>
-
     </div>
+    <div class="row">
+      <a href="upload.html">
+        <button type="button" class="button tiny" id="choosePredef">&#lt;&#lt; BACK</button>
+      </a>
+      <div class="button" id="button tiny right" onclick="forwardToTweak()">&gt;&gt;</div>
+    </div>
+
 </div>
 <footer>
   <nav class="navigation" role="navigation">

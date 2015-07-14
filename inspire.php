@@ -3,23 +3,23 @@ $sess_return = session_start();
 
 $ses_id = session_id();
 if($sess_return && !empty($ses_id)) {
-//    echo $ses_id."<br>";
+  //    echo $ses_id."<br>";
 }
 else
 {
-    $ses_id = -1;
-//    echo $ses_id."<br>";
+  $ses_id = -1;
+  //    echo $ses_id."<br>";
 }
 
 $img = -1;
 $selection = -1;
 if(isset($_POST['img_data'])) {
-    $img = $_POST['img_data'];
-//    echo $img;
+  $img = $_POST['img_data'];
+  //    echo $img;
 }
 if(isset($_POST['chosen_pic'])) {
-    $selection = $_POST['chosen_pic'];
-//    echo $selection;
+  $selection = $_POST['chosen_pic'];
+  //    echo $selection;
 }
 ?>
 
@@ -38,40 +38,32 @@ if(isset($_POST['chosen_pic'])) {
 <body>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <div id="main" class="row">
-    <div>
-        <a href="upload.html">
-        <button id="previousbutton">&lt;&lt;</button>
-    </a>
-    </div>
-
-    <div class="small-12 medium-12 large-12 columns">
-        <h2>I’m performing a color palette analysis on your image…</h2>
-
-        <div class="row">
-            <div class="small-6 columns">
-                <p class="top">I'm getting inspired by your image's colors to
-                create your vase.</p>
-            </div>
+  <div class="small-12 medium-12 large-12 columns">
+    <h2>I’m performing a color palette analysis on your image…</h2>
+    <div class="row">
+      <div class="small-12 medium-6 large-6 columns">
+        <div class="one-time" id="uploadedimage">
+          <?php
+          if($selection != -1)
+          {
+            echo '<img src="./assets/img/sample'.$selection.'.jpg">';
+          } else {
+            $imgsrc = 'data:image/jpeg;base64,'.$img;
+            echo '<img src="'.$imgsrc.'" alt="" />';
+          }
+          ?>
         </div>
-
-        <div class="row">
-            <div class="small-12 medium-6 large-6 columns">
-                <div class="one-time" id="uploadedimage">
-                    <?php
-                        if($selection != -1)
-                        {
-                            echo '<img src="./assets/img/sample'.$selection.'.jpg">';
-                        } else {
-                            $imgsrc = 'data:image/jpeg;base64,'.$img;
-                            echo '<img src="'.$imgsrc.'" alt="" />';
-                        }
-                    ?>
-                </div>
-            </div>
-            <img class="loading" src="./assets/img/loading.gif"/>
-
-        </div>
+      </div>
+      <div class="small-12 medium-6 columns">
+        <img class="loading" src="./assets/img/loading.gif"/>
+      </div>
     </div>
+    <div class="row">
+      <a href="upload.html">
+        <button type="button" class="button tiny" id="choosePredef">&#lt;&#lt; BACK</button>
+      </a>
+    </div>
+  </div>
 </div>
 <footer>
   <nav class="navigation" role="navigation">
@@ -103,61 +95,61 @@ if(isset($_POST['chosen_pic'])) {
 
 <script type="text/javascript">
 function analyzeImage(img) {
-    console.error("sending image to server");
-    var new_url = "./cgi-bin/python/WebImageImport.py";
+  console.error("sending image to server");
+  var new_url = "./cgi-bin/python/WebImageImport.py";
 
-    console.error("session:" + "<?php echo $ses_id ?>");
-    $.ajax({
-        type: "POST",
-        url: new_url,
-        async: true,
-        data: {session_id: "<?php echo $ses_id ?>", image: img}
-    }).done(function(response) {
-        console.error("done:" + response);
-        var vaseid = $(response).find('vaseid').text();
-        var imageid = $(response).find('imageid').text();
-        forwardToAnalyze(vaseid, imageid);
-      });
+  console.error("session:" + "<?php echo $ses_id ?>");
+  $.ajax({
+    type: "POST",
+      url: new_url,
+      async: true,
+      data: {session_id: "<?php echo $ses_id ?>", image: img}
+  }).done(function(response) {
+    console.error("done:" + response);
+    var vaseid = $(response).find('vaseid').text();
+    var imageid = $(response).find('imageid').text();
+    forwardToAnalyze(vaseid, imageid);
+  });
 };
 
 function analyzePredef(chosen_pic) {
-    console.error("sending image to server");
-    var new_url = "./cgi-bin/python/WebImageImport.py";
+  console.error("sending image to server");
+  var new_url = "./cgi-bin/python/WebImageImport.py";
 
-    console.error("session:" + "<?php echo $ses_id ?>");
-    $.ajax({
-        type: "POST",
-        url: new_url,
-        async: true,
-        data: {session_id: "<?php echo $ses_id ?>", chosen_pic: chosen_pic}
-    }).done(function(response) {
-        console.error("done:" + response);
-        var vaseid = $(response).find('vaseid').text();
-        var imageid = $(response).find('imageid').text();
-        forwardToAnalyze(vaseid, imageid);
-      });
+  console.error("session:" + "<?php echo $ses_id ?>");
+  $.ajax({
+    type: "POST",
+      url: new_url,
+      async: true,
+      data: {session_id: "<?php echo $ses_id ?>", chosen_pic: chosen_pic}
+  }).done(function(response) {
+    console.error("done:" + response);
+    var vaseid = $(response).find('vaseid').text();
+    var imageid = $(response).find('imageid').text();
+    forwardToAnalyze(vaseid, imageid);
+  });
 };
 
 if(<?php echo $selection ?> == -1) {
-    analyzeImage("<?php echo $img ?>");
+  analyzeImage("<?php echo $img ?>");
 } else {
-    analyzePredef("<?php echo $selection ?>");
+  analyzePredef("<?php echo $selection ?>");
 }
 
 function forwardToAnalyze(vase_id, image_id) {
-    console.error("vase: " + vase_id + ", image: " + image_id);
-    var postFormStr = "<form method='POST' action='/analyze.php'>\n";
+  console.error("vase: " + vase_id + ", image: " + image_id);
+  var postFormStr = "<form method='POST' action='/analyze.php'>\n";
 
-    postFormStr += "<input type='hidden' name='vase_id' value='" + vase_id + "'></input>";
-    postFormStr += "<input type='hidden' name='image_id' value='" + image_id + "'></input>";
-    postFormStr += "<input type='hidden' name='chosen_pic' value='<?php echo $selection ?>'></input>";
+  postFormStr += "<input type='hidden' name='vase_id' value='" + vase_id + "'></input>";
+  postFormStr += "<input type='hidden' name='image_id' value='" + image_id + "'></input>";
+  postFormStr += "<input type='hidden' name='chosen_pic' value='<?php echo $selection ?>'></input>";
 
-    postFormStr += "</form>";
+  postFormStr += "</form>";
 
-    var formElement = $(postFormStr);
+  var formElement = $(postFormStr);
 
-    $('body').append(formElement);
-    $(formElement).submit();
+  $('body').append(formElement);
+  $(formElement).submit();
 };
 </script>
 
