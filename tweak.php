@@ -106,14 +106,6 @@ $_viv_sess_db->close();
           <h2>I sculpted a vase for you based on 4 feelings about your image's color palette.
           </h2>
       </div>
-        <div class="row">
-          <div class="large-4 columns">
-            <p>Do you agree that this vase feels like your image?</p>
-          </div>
-          <div class="small-2 columns">
-            <button type="button" class="button tiny postfix" onclick="shareorig()">Yes &gt;&gt;</a>
-          </div>
-        </div>
       </div>
     </div>
   </div>
@@ -179,6 +171,7 @@ $_viv_sess_db->close();
   <a href="upload.html">
     <button type="button" class="button tiny" id="choosePredef">&lt;&lt; CHOOSE ANOTHER PICTURE</button>
   </a>
+  <button type="button" class="button tiny right">Print this Vase</div>
 </div>
 <footer>
   <nav class="navigation" role="navigation">
