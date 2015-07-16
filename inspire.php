@@ -60,7 +60,7 @@ if(isset($_POST['chosen_pic'])) {
     </div>
     <div class="row">
       <a href="upload.html">
-        <button type="button" class="button tiny" id="choosePredef">&#lt;&#lt; BACK</button>
+        <button type="button" class="button tiny" id="choosePredef">&lt;&lt; BACK</button>
       </a>
     </div>
   </div>

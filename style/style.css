@@ -180,6 +180,10 @@ footer .row {
   padding-top: 4.5em;
 }
 
+#uploadedimage img {
+  max-height: 500px;
+}
+
 
 /*--------fonts-------*/
 p, h1, h2, h3, span, nav {

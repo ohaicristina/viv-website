@@ -74,9 +74,9 @@ if ($result = mysqli_query($_viv_sess_db, $query)) {
     </div>
     <div class="row">
       <a href="upload.html">
-        <button type="button" class="button tiny" id="choosePredef">&#lt;&#lt; BACK</button>
+        <button type="button" class="button tiny" id="choosePredef">&lt;&lt; CHOOSE ANOTHER PICTURE</button>
       </a>
-      <div class="button" id="button tiny right" onclick="forwardToTweak()">&gt;&gt;</div>
+      <button type="button" class="button tiny right" id="nextbutton" onclick="forwardToTweak()">CONTINUE &gt;&gt;</button>
     </div>
 
 </div>
