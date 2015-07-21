@@ -38,12 +38,26 @@ if ($result = mysqli_query($_viv_sess_db, $query)) {
           rel="stylesheet" type="text/css">
 </head>
 <body>
+<header>
+  <div class="row progress-container">
+    <hr class="progress-connect">
+    <ul class="progress-list">
+      <li class="progress-count">1</li>
+      <li class="progress-count active">2</li>
+      <li class="progress-count">3</li>
+      <li class="progress-count">4</li>
+    </ul>
+  </div>
+</header>
 <div id="main">
-    <div class="row">
-      <div class="small-12 medium-12 large-12 columns">
-        <h2 class="text-right">...these are the colors that stood out to me.</h2>
-      </div>
+  <div class="row">
+    <div class="small-12">
+      <h1>Analyze</h1>
     </div>
+    <div class="small-12 medium-12 large-12 columns">
+      <h2 class="text-right">...these are the colors that stood out to me.</h2>
+    </div>
+  </div>
     <div class="row">
         <div class="small-12 medium-6 large-6 columns">
             <div class="one-time">

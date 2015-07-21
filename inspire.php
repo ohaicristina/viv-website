@@ -37,6 +37,17 @@ if(isset($_POST['chosen_pic'])) {
 </head>
 <body>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<header>
+  <div class="row progress-container">
+    <hr class="progress-connect">
+    <ul class="progress-list">
+      <li class="progress-count">1</li>
+      <li class="progress-count active">2</li>
+      <li class="progress-count">3</li>
+      <li class="progress-count">4</li>
+    </ul>
+  </div>
+</header>
 <div id="main" class="row">
   <div class="small-12 medium-12 large-12 columns">
     <h2>I’m performing a color palette analysis on your image…</h2>

@@ -73,6 +73,18 @@ $_viv_sess_db->close();
 </head>
 
 <body>
+<header>
+  <div class="row progress-container">
+    <hr class="progress-connect">
+    <ul class="progress-list">
+      <li class="progress-count">1</li>
+      <li class="progress-count">2</li>
+      <li class="progress-count active">3</li>
+      <li class="progress-count">4</li>
+    </ul>
+  </div>
+</header>
+
 <div id="main" class="row">
   <div class="row">
     <div class="small-2 medium-2 large-2 columns">
@@ -99,13 +111,45 @@ $_viv_sess_db->close();
       </div>
     </div>
   </div>
-  <div class="small-12 medium-12 large-12 columns">
-    <div class="row collapse">
-      <div class="row">
-          <h1>Edit Vase</h1>
-          <h2>I sculpted a vase for you based on 4 feelings about your image's color palette.
-          </h2>
-      </div>
+  <div class="row">
+    <div class="small-12 medium-12 large-12 columns">
+      <h1>Edit Vase</h1>
+      <h2>I sculpted a vase for you based on 4 feelings about your image's color palette.
+      </h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="small-12 columns vase-container">
+      <div class="small-4 columns">
+        <ul class="small-6 columns color-palette">
+          <li id="color-1" class="colors"></li>
+          <li id="color-2" class="colors"></li>
+          <li id="color-3" class="colors"></li>
+          <li id="color-4" class="colors"></li>
+          <li id="color-5" class="colors"></li>
+          <li id="color-6" class="colors"></li>
+        </ul>
+        <div class="small-6 columns properties">
+          <h4>Properties</h4>
+          <ul class="properties-list">
+            <li class="property">
+              <span class="number">58%</span>
+              <span class="property-name">Weight</span>
+            </li>
+            <li class="property">
+              <span class="number">58%</span>
+              <span class="property-name">Temperature</span>
+            </li>
+            <li class="property">
+              <span class="number">58%</span>
+              <span class="property-name">Activity</span>
+            </li>
+            <li class="property">
+              <span class="number">58%</span>
+              <span class="property-name">Hardness</span>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
